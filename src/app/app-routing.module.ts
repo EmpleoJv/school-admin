@@ -7,44 +7,46 @@ import { loginGuard } from './login/_Auth/login.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { RoleAuthGuard } from './login/_Auth/role.guard';
-
+import { TeacherLeaderboardComponent } from './teacher-leaderboard/teacher-leaderboard.component';
 
 const routes: Routes = [
-    { 
-    path: '', 
+  {
+    path: '',
     redirectTo: '/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
-
-  { 
-    path: 'login', 
-    component: LoginComponent ,
-    canActivate: [loginGuard]
-   
+  {
+    path: 'teacher-leaderboard',
+    component: TeacherLeaderboardComponent,
+    // canActivate: [loginGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    // canActivate: [loginGuard]
   },
   {
     path: 'teacher',
-    component: TeacherComponent,  
-    canActivate: [authGuard, RoleAuthGuard],
+    component: TeacherComponent,
+    // canActivate: [authGuard, RoleAuthGuard],
     data: {
-      role: ["admin", "superAdmin"],
+      role: ['admin', 'superAdmin'],
     },
-
   },
   {
     path: 'profile',
-    component: ProfileComponent,  
-    canActivate: [authGuard, RoleAuthGuard],
+    component: ProfileComponent,
+    // canActivate: [authGuard, RoleAuthGuard],
     data: {
-      role: ["admin", "superAdmin", "user"],
-    },  
+      role: ['admin', 'superAdmin', 'user'],
+    },
   },
   {
     path: 'leaderboard',
-    component: LeaderboardComponent,  
-    canActivate: [authGuard, RoleAuthGuard],
+    component: LeaderboardComponent,
+    // canActivate: [authGuard, RoleAuthGuard],
     data: {
-      role: ["admin", "superAdmin"],
+      role: ['admin', 'superAdmin'],
     },
   },
 ];
