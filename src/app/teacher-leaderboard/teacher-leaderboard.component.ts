@@ -1,31 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TeacherLeaderboardModel } from '../model/teacher-leaderboard.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { TeacherLeaderbaordService } from './_service/teacher-leaderbaord.service';
 import { SecureStorageService } from '../login/_Auth/secure-storage.service';
+
+import { HeaderNameService } from '../shared/component/header/_service/header-name.service';
 @Component({
   selector: 'app-teacher-leaderboard',
   templateUrl: './teacher-leaderboard.component.html',
   styleUrls: ['./teacher-leaderboard.component.scss'],
 })
 export class TeacherLeaderboardComponent {
-  constructor(private teacherLeaderbaordService: TeacherLeaderbaordService,
-              private secureStorageService: SecureStorageService
+
+  @Input() headerName: String = 'Leaderboard';
+
+  constructor(
+    private teacherLeaderbaordService: TeacherLeaderbaordService,
+    private headerService: HeaderNameService,
+    private secureStorageService: SecureStorageService
   ) {}
+
   displayedColumns: string[] = [
     'id_number',
     'first_name',
     'last_name',
-    'email',
     'section',
     'chapter_finish',
     'total_score',
+    'remarks',
   ];
 
   dataSource = new MatTableDataSource<TeacherLeaderboardModel>();
 
   ngOnInit() {
     this.loadTeacherLeaderboard();
+    this.headerService.setHeaderName('Section Mangga Leaderboard');
   }
 
   loadTeacherLeaderboard() {
