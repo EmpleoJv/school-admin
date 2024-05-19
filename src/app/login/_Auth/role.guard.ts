@@ -1,6 +1,7 @@
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
+import { SecureStorageService } from './secure-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,33 +11,38 @@ export class RoleAuthGuard implements CanActivate {
   LoggedinEmail: string = "";
 
   constructor(
-
-      private router: Router,
+        private secureStorageService: SecureStorageService,
+        private router: Router,
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-       const roleToken = localStorage.getItem('role');
+       const roleToken = this.secureStorageService.getItem('role');
        if (!roleToken) {
            this.router.navigate(['/login']); 
            return false;`                                     `
        }
        
   const requiredRoles = route.data["role"] as string[];
-  if (requiredRoles.includes(roleToken) || requiredRoles.includes('admin') && roleToken === 'superAdmin') {
+  if (requiredRoles.includes(roleToken) || requiredRoles.includes('teacher') && roleToken === 'headTeacher') {
       return true;
   } else {
       switch(roleToken){
-          case "admin":
-          case "superAdmin":
-              this.router.navigate(['/teacher']);  
+          case "teacher":
+            this.router.navigate(['/teacher-leaderboard']);  
               break;
-          case "user":
+          case "headTeacher":
+              this.router.navigate(['/head-leaderboard']);  
+              break;
+          case "student":
               this.router.navigate(['/profile']); 
               break;
           default:
               console.log("error in role");
       }
   }
+  console.log("role gaurd");
+
   return false;
    }
+
   }

@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { TeacherLeaderboardModel } from '../model/teacher-leaderboard.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { TeacherLeaderbaordService } from './_service/teacher-leaderbaord.service';
+import { SecureStorageService } from '../login/_Auth/secure-storage.service';
+
 import { HeaderNameService } from '../shared/component/header/_service/header-name.service';
 @Component({
   selector: 'app-teacher-leaderboard',
@@ -9,11 +11,13 @@ import { HeaderNameService } from '../shared/component/header/_service/header-na
   styleUrls: ['./teacher-leaderboard.component.scss'],
 })
 export class TeacherLeaderboardComponent {
+
   @Input() headerName: String = 'Leaderboard';
 
   constructor(
     private teacherLeaderbaordService: TeacherLeaderbaordService,
-    private headerService: HeaderNameService
+    private headerService: HeaderNameService,
+    private secureStorageService: SecureStorageService
   ) {}
 
   displayedColumns: string[] = [
@@ -34,17 +38,21 @@ export class TeacherLeaderboardComponent {
   }
 
   loadTeacherLeaderboard() {
+    const userId = this.secureStorageService.getItem('userId');
+    console.log(userId)
     this.teacherLeaderbaordService
       .getSectionsLeaderboard()
       .subscribe((res: any) => {
         const ds = res.data;
-        const filteredData = ds.filter(
-          (student: any) => student.section === 'mangga'
-        );
+
+        const userType = ds.find((teacher: any) => teacher.id === userId)
+        const filteredData = ds.filter((student: any) => student.section === userType.section && student.role === 'student');
+        
         const sortedData = filteredData.sort(
           (a: TeacherLeaderboardModel, b: TeacherLeaderboardModel) =>
             b.total_score - a.total_score
         );
+
         this.dataSource = new MatTableDataSource<TeacherLeaderboardModel>(
           sortedData
         );

@@ -1,25 +1,30 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { inject } from '@angular/core';
+import { SecureStorageService } from './secure-storage.service';
 
 export const loginGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
-
-  const role = localStorage.getItem('role');
+  const secureStorageService = inject(SecureStorageService);
+  const role = secureStorageService.getItem('role');
   if (authService.isAuthenticated()) {
     // router.navigate(['/teacher']);
 
-  if(role === 'user'){
-    router.navigate(['/profile']);
-  }else if(role === 'admin'){
-    router.navigate(['/teacher']);
-  }else if(role === 'superAdmin'){
-    router.navigate(['/leaderboard']);
-  }else{
-    console.log("gg toh par");
-
+    switch(role){
+      case "teacher":
+        router.navigate(['/teacher-leaderboard']);  
+          break;
+      case "headTeacher":
+        router.navigate(['/head-leaderboard']);  
+          break;
+      case "student":
+          router.navigate(['/profile']); 
+          break;
+      default:
+          console.log("error in role");
   }
+  console.log("login gaurd");
     return false;
   }
    else {

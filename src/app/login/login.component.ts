@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from './_service/login.service';
 import { AuthService } from './_Auth/auth.service';
 import { Router } from '@angular/router';
+import { SecureStorageService } from './_Auth/secure-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
   constructor(
     private loginService: LoginService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private secureStorageService: SecureStorageService
   ) {}
 
   onSubmit() {
@@ -36,18 +38,20 @@ export class LoginComponent {
 
           this.authService.login(randomToken);
 
+          this.secureStorageService.setItem('userId', userRole.id)
+
           switch (role) {
-            case 'superAdmin':
-              this.router.navigate(['/teacher']);
-              localStorage.setItem('role', 'superAdmin');
+            case 'headTeacher':
+              this.router.navigate(['/head-leaderboard']);
+              this.secureStorageService.setItem('role', 'headTeacher');
               break;
-            case 'admin':
-              this.router.navigate(['/teacher']);
-              localStorage.setItem('role', 'admin');
+            case 'teacher':
+              this.router.navigate(['/teacher-leaderboard']);
+              this.secureStorageService.setItem('role', 'teacher');
               break;
-            case 'user':
+            case 'student':
               this.router.navigate(['/profile']);
-              localStorage.setItem('role', 'user');
+              this.secureStorageService.setItem('role', 'student');
               break;
             default:
               console.log('error sa role');
