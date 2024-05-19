@@ -1,9 +1,9 @@
 export interface TeacherLeaderboardModel {
-  id_number: boolean;
-  first_name: number;
+  id_number: number;
+  first_name: String;
   last_name: String;
-  email: number;
-  section: boolean;
-  chapter_finish: String;
+  email: String;
+  section: String;
+  chapter_finish: number;
   total_score: number;
 }
