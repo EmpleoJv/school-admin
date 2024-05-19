@@ -8,20 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { SharedModule } from './shared/shared.module';
-import { TeacherComponent } from './teacher/teacher.component';
 import { MaterialModule } from './material.module';
 import { TeacherLeaderboardComponent } from './teacher-leaderboard/teacher-leaderboard.component';
+import { HeadLeaderboardComponent } from './head-leaderboard/head-leaderboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    LeaderboardComponent,
-    TeacherComponent,
     TeacherLeaderboardComponent,
+    HeadLeaderboardComponent
   ],
   imports: [
     BrowserModule,

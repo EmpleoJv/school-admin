@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { inject } from '@angular/core';
+import { SecureStorageService } from './secure-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -6,11 +8,12 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private userRole: string = '';
 
-    constructor(){}
+    constructor(private secureStorageService: SecureStorageService
+    ){}
     
   // Mock authentication check
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('authToken');
+    return !!this.secureStorageService.getItem('authToken');
   }
 
   // Generate a random token
@@ -26,12 +29,12 @@ export class AuthService {
 
   // Mock login method
   login(randomToken: string) {
-    localStorage.setItem('authToken', randomToken);
+    this.secureStorageService.setItem('authToken', randomToken);
   }
 
   // Mock logout method
   logout() {
-    localStorage.removeItem('authToken');
+    this.secureStorageService.removeItem('authToken');
   }
 
 }
