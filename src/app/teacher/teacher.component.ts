@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./teacher.component.scss'],
 })
 export class TeacherComponent {
-  showFiller = false;
+  // showFiller = false;
 }

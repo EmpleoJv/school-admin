@@ -6,54 +6,58 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-email: any;
-password: any;
-    constructor(private loginService: LoginService,
-                private authService: AuthService,
-                private router: Router
-    ){}
+  email: any;
+  password: any;
+  constructor(
+    private loginService: LoginService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-   onSubmit() {
-      this.loginService.getAllUserData().subscribe((res:any) =>{
-        const ds = res.data;
+  onSubmit() {
+    this.loginService.getAllUserData().subscribe((res: any) => {
+      const ds = res.data;
 
-        const userEmail = ds.find((user: any) => user.email === this.email);
-        if(userEmail){
-          const userPassword = ds.find((user: any) => user.password === this.password);
-          if(userPassword){
+      const userEmail = ds.find((user: any) => user.email === this.email);
+      if (userEmail) {
+        const userPassword = ds.find(
+          (user: any) => user.password === this.password
+        );
+        if (userPassword) {
+          const userRole = ds.find(
+            (user: any) =>
+              user.email === this.email && user.password === this.password
+          );
+          const role = userRole.role;
+          const randomToken = this.authService.generateRandomToken(10);
 
-                  const role = userPassword.role;
-                  const randomToken = this.authService.generateRandomToken(10);
+          this.authService.login(randomToken);
 
-                 
-                  this.authService.login(randomToken);
-                  
-                  switch (role) {
-                    case "superAdmin":
-                        this.router.navigate(["/teacher"]);
-                        localStorage.setItem('role', 'superAdmin');
-                        break;
-                    case "admin":
-                        this.router.navigate(["/teacher"]);
-                        localStorage.setItem('role', 'admin');
-                        break;
-                    case "user":
-                        this.router.navigate(["/profile"]);
-                        localStorage.setItem('role', 'user');
-                        break;
-                    default:
-                        console.log("error sa role");
-                }
-
-          }else{
-            console.log("Wrong password")  
+          switch (role) {
+            case 'superAdmin':
+              this.router.navigate(['/teacher']);
+              localStorage.setItem('role', 'superAdmin');
+              break;
+            case 'admin':
+              this.router.navigate(['/teacher']);
+              localStorage.setItem('role', 'admin');
+              break;
+            case 'user':
+              this.router.navigate(['/profile']);
+              localStorage.setItem('role', 'user');
+              break;
+            default:
+              console.log('error sa role');
           }
-        }else{
-          console.log("Wrong Email")
+        } else {
+          console.log('Wrong password');
         }
-      })
-    }
+      } else {
+        console.log('Wrong Email');
+      }
+    });
+  }
 }

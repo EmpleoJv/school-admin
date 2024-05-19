@@ -1,42 +1,71 @@
 {
-    "status": "Success!",
-    "data": [
-        {
-            "id": 1,
-            "first_name": "Angelo",
-            "last_name": "Bautista",
-            "id_number": "123",
-            "email": "angelobautista@gmail.com",
-            "password": "password123",
-            "section": "mangga",
-            "role": "user",
-            "is_active": true,
-            "last_update": "2024-02-20T09:03:30.795Z"
-        },
-        {
-            "id": 2,
-            "first_name": "John",
-            "last_name": "Martinez",
-            "id_number": "123",
-            "email": "martinez@gmail.com",
-            "password": "password123",
-            "section": "faculty Teacher",
-            "role": "admin",
-            "is_active": true,
-            "last_update": "2024-02-20T09:03:30.795Z"
-        },
-        {
-            "id": 2,
-            "first_name": "Jonathan",
-            "last_name": "magtoto",
-            "id_number": "123",
-            "email": "magtoto@gmail.com",
-            "password": "password123",
-            "section": "Head Teacher",
-            "role": "superAdmin",
-            "is_active": true,
-            "last_update": "2024-02-20T09:03:30.795Z"
-        }
-        
-    ]
+  "status": "Success!",
+  "data": [
+    {
+      "id": 1,
+      "first_name": "Angelo",
+      "last_name": "Bautista",
+      "id_number": "1",
+      "email": "angelobautista@gmail.com",
+      "password": "password123",
+      "section": "mangga",
+      "role": "user",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z",
+      "chapter_finish": 4,
+      "total_score": 12
+    },
+    {
+      "id": 2,
+      "first_name": "Angelo",
+      "last_name": "Bautista",
+      "id_number": "2",
+      "email": "angelobautista@gmail.com",
+      "password": "password123",
+      "section": "mangga",
+      "role": "user",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z",
+      "chapter_finish": 4,
+      "total_score": 123
+    },
+    {
+      "id": 3,
+      "first_name": "Angelo",
+      "last_name": "Bautista",
+      "id_number": "3",
+      "email": "angelobautista@gmail.com",
+      "password": "password123",
+      "section": "mangga",
+      "role": "user",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z",
+      "chapter_finish": 4,
+      "total_score": 1234
+    },
+    {
+      "id": 2,
+      "first_name": "John",
+      "last_name": "Martinez",
+      "id_number": "123",
+      "email": "martinez@gmail.com",
+      "password": "password123",
+      "section": "faculty Teacher",
+      "role": "admin",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z"
+    },
+    {
+      "id": 2,
+      "first_name": "Jonathan",
+      "last_name": "magtoto",
+      "id_number": "123",
+      "email": "magtoto@gmail.com",
+      "password": "password123",
+      "section": "Head Teacher",
+      "role": "superAdmin",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z"
+    }
+  ]
 }

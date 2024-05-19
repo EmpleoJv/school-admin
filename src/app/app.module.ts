@@ -4,17 +4,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { TeacherComponent } from './teacher/teacher.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { SharedModule } from './shared/shared.module';
+import { TeacherComponent } from './teacher/teacher.component';
+import { MaterialModule } from './material.module';
+import { TeacherLeaderboardComponent } from './teacher-leaderboard/teacher-leaderboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, TeacherComponent, SidenavComponent, ProfileComponent, LeaderboardComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, FormsModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ProfileComponent,
+    LeaderboardComponent,
+    TeacherComponent,
+    TeacherLeaderboardComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    SharedModule,
+    MaterialModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
