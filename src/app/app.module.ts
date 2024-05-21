@@ -11,7 +11,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material.module';
 import { TeacherLeaderboardComponent } from './teacher-leaderboard/teacher-leaderboard.component';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { HeadLeaderboardComponent } from './head-leaderboard/head-leaderboard.component';
+import { HeadDashboardComponent } from './head-dashboard/head-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HeadLeaderboardComponent } from './head-leaderboard/head-leaderboard.co
     LoginComponent,
     ProfileComponent,
     TeacherLeaderboardComponent,
-    HeadLeaderboardComponent
+    HeadLeaderboardComponent,
+    HeadDashboardComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     BrowserModule,

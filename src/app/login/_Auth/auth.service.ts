@@ -35,6 +35,8 @@ export class AuthService {
   // Mock logout method
   logout() {
     this.secureStorageService.removeItem('authToken');
+    this.secureStorageService.removeItem('userId')
+    this.secureStorageService.removeItem('role')
   }
 
 }
