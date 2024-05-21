@@ -14,6 +14,7 @@ import { TeacherLeaderboardComponent } from './teacher-leaderboard/teacher-leade
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { HeadLeaderboardComponent } from './head-leaderboard/head-leaderboard.component';
 import { HeadDashboardComponent } from './head-dashboard/head-dashboard.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { HeadDashboardComponent } from './head-dashboard/head-dashboard.componen
     TeacherLeaderboardComponent,
     HeadLeaderboardComponent,
     HeadDashboardComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ import { HeadDashboardComponent } from './head-dashboard/head-dashboard.componen
     FormsModule,
     SharedModule,
     MaterialModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

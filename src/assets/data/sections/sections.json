@@ -1,0 +1,33 @@
+{
+  "status": "Success!",
+  "data": [
+    {
+      "id": 1,
+      "sections": "mangga"
+    },
+    {
+      "id": 2,
+      "sections": "orange"
+    },
+    {
+      "id": 2,
+      "sections": "mansanas"
+    },
+    {
+      "id": 2,
+      "sections": "bayabas"
+    },
+    {
+      "id": 2,
+      "sections": "saging"
+    },
+    {
+      "id": 2,
+      "sections": "santol"
+    },
+    {
+      "id": 2,
+      "sections": "magic-sarap"
+    }
+  ]
+}

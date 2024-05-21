@@ -11,7 +11,6 @@ import { HeaderNameService } from '../shared/component/header/_service/header-na
   styleUrls: ['./teacher-leaderboard.component.scss'],
 })
 export class TeacherLeaderboardComponent {
-
   @Input() headerName: String = 'Leaderboard';
 
   constructor(
@@ -39,15 +38,18 @@ export class TeacherLeaderboardComponent {
 
   loadTeacherLeaderboard() {
     const userId = this.secureStorageService.getItem('userId');
-    console.log(userId)
+    console.log(userId);
     this.teacherLeaderbaordService
       .getSectionsLeaderboard()
       .subscribe((res: any) => {
         const ds = res.data;
 
-        const userType = ds.find((teacher: any) => teacher.id === userId)
-        const filteredData = ds.filter((student: any) => student.section === userType.section && student.role === 'student');
-        
+        const userType = ds.find((teacher: any) => teacher.id === userId);
+        const filteredData = ds.filter(
+          (student: any) =>
+            student.section === userType.section && student.role === 'student'
+        );
+
         const sortedData = filteredData.sort(
           (a: TeacherLeaderboardModel, b: TeacherLeaderboardModel) =>
             b.total_score - a.total_score
