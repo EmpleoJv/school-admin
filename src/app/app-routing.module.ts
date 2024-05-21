@@ -19,39 +19,39 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [loginGuard]
+    canActivate: [loginGuard],
   },
   {
     path: 'teacher-leaderboard',
     component: TeacherLeaderboardComponent,
-    canActivate: [authGuard, RoleAuthGuard],
-    data:{
+    // canActivate: [authGuard, RoleAuthGuard],
+    data: {
       role: ['teacher'],
-    }
+    },
   },
   {
     path: 'teacher-dashboard',
     component: TeacherDashboardComponent,
     canActivate: [authGuard, RoleAuthGuard],
-    data:{
+    data: {
       role: ['teacher'],
-    }
+    },
   },
   {
     path: 'head-leaderboard',
     component: HeadLeaderboardComponent,
     canActivate: [authGuard, RoleAuthGuard],
-    data:{
+    data: {
       role: ['headTeacher'],
-    }
+    },
   },
   {
     path: 'head-dashboard',
     component: HeadDashboardComponent,
     canActivate: [authGuard, RoleAuthGuard],
-    data:{
+    data: {
       role: ['headTeacher'],
-    }
+    },
   },
   {
     path: 'profile',
@@ -61,8 +61,6 @@ const routes: Routes = [
       role: ['teacher', 'headTeacher', 'student'],
     },
   },
-  
-
 ];
 
 @NgModule({
