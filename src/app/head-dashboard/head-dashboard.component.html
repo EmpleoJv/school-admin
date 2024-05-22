@@ -6,17 +6,8 @@
     <app-header></app-header>
   </div>
   <div class="static ml-0 sm:ml-64 p-0 sm:p-20">
-    <div id="chart">
-      <apx-chart
-        [series]="chartOptions.series"
-        [chart]="chartOptions.chart"
-        [dataLabels]="chartOptions.dataLabels"
-        [plotOptions]="chartOptions.plotOptions"
-        [yaxis]="chartOptions.yaxis"
-        [xaxis]="chartOptions.xaxis"
-        [fill]="chartOptions.fill"
-        [title]="chartOptions.title"
-      ></apx-chart>
-    </div>
+    <app-all-students-high-score></app-all-students-high-score>
+    <app-most-players-section></app-most-players-section>
+    <app-most-coin-collected></app-most-coin-collected>
   </div>
 </div>
