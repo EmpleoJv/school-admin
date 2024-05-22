@@ -1,1 +1,26 @@
-<p>profile works!</p>
+<div class="static ml-0 sm:ml-max">
+    <app-header></app-header>
+  </div>
+
+<div class="sm:ml-80 sm:mt-32">
+        <div class="bg-gray-200 border-2 border-gray-400 rounded-md sm:w-[50rem] flex justify-center items-center h-[20rem]" *ngFor="let data of profilData">
+          <div class="text-center">
+            <p class="font-bold text-2xl">{{data.first_name}} {{data.last_name}}</p>
+            <p class="text-lg">{{data.role}} </p>
+            <table class="table-fixed w-full text-lg mt-12">
+              <tr>
+                <th>Role:</th>
+                <td>{{data.role}} </td>
+              </tr>
+              <tr>
+                <th>Email:</th>
+                <td>{{data.email}}</td>
+              </tr>
+              <tr>
+                <th>Highest Score:</th>
+                <td>{{data.total_score || 0}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
