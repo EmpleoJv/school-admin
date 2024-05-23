@@ -32,4 +32,21 @@ export class HeaderComponent {
     this.secureStorageService.removeItem('role');
     }
 
+
+    home(){
+      const roleUser = this.secureStorageService.getItem("role")
+      switch(roleUser){
+        case "teacher":
+          this.router.navigate(['/teacher-leaderboard']);  
+            break;
+        case "headTeacher":
+            this.router.navigate(['/head-leaderboard']);  
+            break;
+        case "student":
+            this.router.navigate(['/profile']); 
+            break;
+        default:
+            console.log("error in role");
+    }
+    }
 }
