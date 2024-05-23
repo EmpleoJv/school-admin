@@ -12,6 +12,7 @@ export class ProfileComponent {
 
     firstName: string = "";
     lastName: string = "";
+  
 
   constructor(private profileService: ProfileService,
               private secureStorageService: SecureStorageService
