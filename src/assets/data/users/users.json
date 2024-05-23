@@ -6,7 +6,7 @@
       "first_name": "Juan",
       "last_name": "Delacrus",
       "id_number": "1",
-      "email": "angelobautista@gmail.com",
+      "email": "angelobautista1@gmail.com",
       "password": "password123",
       "section": "mangga",
       "role": "student",
@@ -17,11 +17,11 @@
       "total_score": 1211
     },
     {
-      "id": 1,
+      "id": 2,
       "first_name": "Jane",
       "last_name": "Bruce",
       "id_number": "1",
-      "email": "angelobautista@gmail.com",
+      "email": "angelobautista2@gmail.com",
       "password": "password123",
       "section": "orange",
       "role": "student",
@@ -32,26 +32,11 @@
       "total_score": 2200
     },
     {
-      "id": 1,
+      "id": 3,
       "first_name": "Tipsy",
       "last_name": "D",
       "id_number": "1",
-      "email": "angelobautista@gmail.com",
-      "password": "password123",
-      "section": "mansanas",
-      "role": "student",
-      "is_active": true,
-      "last_update": "2024-02-20T09:03:30.795Z",
-      "chapter_finish": 4,
-      "secret_coins": 1500,
-      "total_score": 1200
-    },
-    {
-      "id": 1,
-      "first_name": "Loonie",
-      "last_name": "Toons",
-      "id_number": "1",
-      "email": "angelobautista@gmail.com",
+      "email": "angelobautista3@gmail.com",
       "password": "password123",
       "section": "mansanas",
       "role": "student",
@@ -63,6 +48,21 @@
     },
     {
       "id": 4,
+      "first_name": "Loonie",
+      "last_name": "Toons",
+      "id_number": "1",
+      "email": "angelobautista3@gmail.com",
+      "password": "password123",
+      "section": "mansanas",
+      "role": "student",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z",
+      "chapter_finish": 4,
+      "secret_coins": 1500,
+      "total_score": 1200
+    },
+    {
+      "id": 5,
       "first_name": "John",
       "last_name": "Martinez",
       "id_number": "123",
@@ -74,7 +74,7 @@
       "last_update": "2024-02-20T09:03:30.795Z"
     },
     {
-      "id": 5,
+      "id": 6,
       "first_name": "Jonathan",
       "last_name": "magtoto",
       "id_number": "123",
