@@ -85,7 +85,9 @@ export class MostCoinCollectedComponent implements OnInit {
       const secretCoins = this.dataFromDatabase.map(
         (student: any) => student.secret_coins
       );
-
+      const studentSections = this.dataFromDatabase.map(
+        (student: any) => student.section
+      );
       this.chartOptions = {
         ...this.chartOptions,
         series: [
