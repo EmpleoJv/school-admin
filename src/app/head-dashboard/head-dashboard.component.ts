@@ -34,7 +34,7 @@ export type ChartOptions = {
   styleUrls: ['./head-dashboard.component.scss'],
 })
 export class HeadDashboardComponent implements OnInit {
-  @Input() headerName: String = 'Leaderboard';
+  // @Input() headerName: String = 'Leaderboard';
 
   constructor(
     private headDashboardService: HeadDashboardService,
@@ -43,6 +43,6 @@ export class HeadDashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.headerService.setHeaderName('Head Dashboard');
+    this.headerService.setHeaderName('Head Dashboard Analytics');
   }
 }
