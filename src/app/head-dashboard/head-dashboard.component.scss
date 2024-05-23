@@ -1,0 +1,17 @@
+.header-analytics {
+  width: 100%;
+  display: flex;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.5rem solid black;
+  div {
+    background-color: #1f2937;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

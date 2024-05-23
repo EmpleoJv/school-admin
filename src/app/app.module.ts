@@ -15,6 +15,9 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
 import { HeadLeaderboardComponent } from './head-leaderboard/head-leaderboard.component';
 import { HeadDashboardComponent } from './head-dashboard/head-dashboard.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { AllStudentsHighScoreComponent } from './head-dashboard/_component/all-students-high-score/all-students-high-score.component';
+import { MostPlayersSectionComponent } from './head-dashboard/_component/most-players-section/most-players-section.component';
+import { MostCoinCollectedComponent } from './head-dashboard/_component/most-coin-collected/most-coin-collected.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     HeadLeaderboardComponent,
     HeadDashboardComponent,
     TeacherDashboardComponent,
+    AllStudentsHighScoreComponent,
+    MostPlayersSectionComponent,
+    MostCoinCollectedComponent,
   ],
   imports: [
     BrowserModule,
