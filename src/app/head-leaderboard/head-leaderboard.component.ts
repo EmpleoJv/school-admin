@@ -30,14 +30,44 @@ export class HeadLeaderboardComponent {
     'remarks',
   ];
 
+  displayedColumns2: string[] = [
+    'id_number',
+    'first_name',
+    'last_name',
+    'section',
+  ];
+
   dataSource = new MatTableDataSource<TeacherLeaderboardModel>();
+  dataSource2 = new MatTableDataSource<TeacherLeaderboardModel>();
 
   ngOnInit() {
     this.headerService.setHeaderName("All Section's Leaderboard");
     this.loadTeacherLeaderboard();
     this.loadSelectSection();
+    this.loadTeacherTable();
   }
 
+  loadTeacherTable() {
+    const userId = this.secureStorageService.getItem('userId');
+    console.log(userId);
+    this.headLeaderboardService
+      .getAllStudentsLeaderboard()
+      .subscribe((res: any) => {
+        const ds = res.data;
+        const userType = ds.find((teacher: any) => teacher.id === userId);
+        const filteredData = ds.filter(
+          (student: any) => student.role === 'teacher'
+        );
+        const sortedData = filteredData.sort(
+          (a: TeacherLeaderboardModel, b: TeacherLeaderboardModel) =>
+            b.total_score - a.total_score
+        );
+
+        this.dataSource2 = new MatTableDataSource<TeacherLeaderboardModel>(
+          sortedData
+        );
+      });
+  }
   loadTeacherLeaderboard() {
     const userId = this.secureStorageService.getItem('userId');
     console.log(userId);
@@ -59,6 +89,7 @@ export class HeadLeaderboardComponent {
         );
       });
   }
+
   loadSelectSection() {
     this.headLeaderboardService.getAllSection().subscribe((res: any) => {
       const ds = res.data;
