@@ -18,6 +18,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { AllStudentsHighScoreComponent } from './head-dashboard/_component/all-students-high-score/all-students-high-score.component';
 import { MostPlayersSectionComponent } from './head-dashboard/_component/most-players-section/most-players-section.component';
 import { MostCoinCollectedComponent } from './head-dashboard/_component/most-coin-collected/most-coin-collected.component';
+import { ColComponent } from './teacher-dashboard/col/col.component';
+import { RowComponent } from './teacher-dashboard/row/row.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MostCoinCollectedComponent } from './head-dashboard/_component/most-coi
     AllStudentsHighScoreComponent,
     MostPlayersSectionComponent,
     MostCoinCollectedComponent,
+    ColComponent,
+    RowComponent,
   ],
   imports: [
     BrowserModule,

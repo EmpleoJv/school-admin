@@ -63,6 +63,18 @@
     },
     {
       "id": 5,
+      "first_name": "pugi",
+      "last_name": "Martinez",
+      "id_number": "123",
+      "email": "martinez",
+      "password": "password123",
+      "section": "mansanas",
+      "role": "teacher",
+      "is_active": true,
+      "last_update": "2024-02-20T09:03:30.795Z"
+    },
+    {
+      "id": 6,
       "first_name": "John",
       "last_name": "Martinez",
       "id_number": "123",
@@ -74,7 +86,8 @@
       "last_update": "2024-02-20T09:03:30.795Z"
     },
     {
-      "id": 6,
+
+      "id": 7,
       "first_name": "Jonathan",
       "last_name": "magtoto",
       "id_number": "123",

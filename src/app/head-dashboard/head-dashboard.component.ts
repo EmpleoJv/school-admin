@@ -39,6 +39,7 @@ export class HeadDashboardComponent implements OnInit {
   bestPlayerName: string = '';
   highestScore: number = 0;
 
+
   constructor(
     private headDashboardService: HeadDashboardService,
     private headerService: HeaderNameService,
@@ -48,6 +49,7 @@ export class HeadDashboardComponent implements OnInit {
   ngOnInit() {
     this.headerService.setHeaderName('Head Dashboard');
     this.bestPlayer();
+    this.headerService.setHeaderName('Head Dashboard Analytics');
   }
 
   bestPlayer() {
