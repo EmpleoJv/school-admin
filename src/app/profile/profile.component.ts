@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfileService } from './_service/teacher-leaderbaord.service';
 import { SecureStorageService } from '../login/_Auth/secure-storage.service';
+import { HeaderNameService } from '../shared/component/header/_service/header-name.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -15,10 +16,12 @@ export class ProfileComponent {
   
 
   constructor(private profileService: ProfileService,
-              private secureStorageService: SecureStorageService
+              private secureStorageService: SecureStorageService,
+              private headerService: HeaderNameService
   ){}
 
   ngOnInit(){
+    this.headerService.setHeaderName('Profile');
     this.profile();
 
     console.log(this.profilData)
